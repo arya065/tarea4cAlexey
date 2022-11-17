@@ -19,8 +19,8 @@ public class ClasePersona {
         this.peso=peso;
         this.nif=nif();
     }
-    private String nif(){
-        String nif="";
+    private int nif(){
+        int nif=0;
         return nif;
     }
 }
