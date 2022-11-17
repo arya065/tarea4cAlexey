@@ -28,8 +28,6 @@ public class ClasePersona {
 
     }
 
-
-
     private static String generaNif() {
         Random rand = new Random();
 
@@ -48,26 +46,82 @@ public class ClasePersona {
     }
 
     private char asignarSexo(char sexo) {
-        boolean result= filtrarSexo(sexo);
-        if (!result){
-            sexo='O';
+        boolean result = filtrarSexo(sexo);
+        if (!result) {
+            sexo = 'O';
         }
         return sexo;
     }
 
+    private boolean mayorEdad() {
+        return edad>=18;
+    }
+    private float calcularIMC(){
+        float imc= (float) (peso / Math. pow(altura, 2));
+        return imc;
+    }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    @Override
-    public String toString() {
+    private darLikeSerie(/*название сериала*/){
+            //code
+    }
+
+
+
+
+
+
+
+
+
+
+
+@Override
+public String toString() {
         return "ClasePersona{" + "nombre=" + nombre + ", edad=" + edad + ", nif=" + nif + ", sexo=" + sexo + ", peso=" + peso + ", altura=" + altura + '}';
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+
+    public String getNif() {
+        return nif;
+    }
+
+    public char getSexo() {
+        return sexo;
+    }
+
+    public void setSexo(char sexo) {
+        this.sexo = sexo;
+    }
+
+    public int getPeso() {
+        return peso;
+    }
+
+    public void setPeso(int peso) {
+        this.peso = peso;
+    }
+
+    public int getAltura() {
+        return altura;
+    }
+
+    public void setAltura(int altura) {
+        this.altura = altura;
     }
 
     
