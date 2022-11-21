@@ -10,7 +10,7 @@ public class ClasePersona {
     private char sexo;
     private int peso;
     private int altura;
-
+    private float imc;
     public ClasePersona() {//конструктор с ничем
 
     }
@@ -25,10 +25,10 @@ public class ClasePersona {
         if (!filtrarSexo(sexo)) {
             this.sexo = asignarSexo(sexo);
         }
-
+        this.imc=calcularIMC();
     }
 
-    private static String generaNif() {
+    public static String generaNif() {
         Random rand = new Random();
 
         int numRand = rand.nextInt(99999999 + 1);
@@ -53,33 +53,29 @@ public class ClasePersona {
         return sexo;
     }
 
-    private boolean mayorEdad() {
+    public boolean mayorEdad() {
         return edad>=18;
     }
     private float calcularIMC(){
-        float imc= (float) (peso / Math. pow(altura, 2));
+        float imc= (float) (peso / Math. pow(altura/100, 2.0));
         return imc;
     }
     
-    private darLikeSerie(/*название сериала*/){
-            //code
+//    private darLikeSerie(/*название сериала*/){
+//            //code
+//    }
+
+    
+    
+    
+    
+    
+    
+    @Override
+    public String toString() {
+        return "ClasePersona{" + "nombre=" + nombre + ", edad=" + edad + ", nif=" + nif + ", sexo=" + sexo + ", peso=" + peso + ", altura=" + altura + ", imc=" + imc + '}';
     }
-
-
-
-
-
-
-
-
-
-
-
-@Override
-public String toString() {
-        return "ClasePersona{" + "nombre=" + nombre + ", edad=" + edad + ", nif=" + nif + ", sexo=" + sexo + ", peso=" + peso + ", altura=" + altura + '}';
-    }
-
+    
     public String getNombre() {
         return nombre;
     }
@@ -122,6 +118,14 @@ public String toString() {
 
     public void setAltura(int altura) {
         this.altura = altura;
+    }
+
+    public float getImc() {
+        return imc;
+    }
+
+    public void setImc(float imc) {
+        this.imc = imc;
     }
 
     
